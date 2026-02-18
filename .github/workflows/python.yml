@@ -1,0 +1,14 @@
+name: Python CI Project
+on: push
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name:  Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run the python code
+        run: python app.py
